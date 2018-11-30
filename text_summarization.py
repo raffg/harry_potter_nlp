@@ -155,9 +155,14 @@ class TextSummarization(object):
 
         for idx, row in df2.iterrows():
             if row['topic_num'] in topics:
+<<<<<<< HEAD
                 print(int(row['topic_num']))
                 print(row['text'])
                 print()
+=======
+                print('Topic {}: {}'.
+                      format(int(row['topic_num']), row['text']))
+>>>>>>> 123848e4542a9b78bec2a280c5e5af492064d92f
 
     def get_representative_sentences(self, topics='all', num_sentences=3):
         if topics == 'all':
@@ -181,7 +186,10 @@ class TextSummarization(object):
             summary = hf.summarize(text, num_sentences, words)
             for sentence in summary:
                 print(sentence)
+<<<<<<< HEAD
             print()
+=======
+>>>>>>> 123848e4542a9b78bec2a280c5e5af492064d92f
 
     def get_document_summaries(self, documents='all', num_sent=5):
         if documents == 'all':
@@ -202,7 +210,11 @@ class TextSummarization(object):
             words.extend(self.doc_names[document].lower().split())
             for sentence in hf.summarize(self.documents[document], num_sent, words):
                 print(sentence)
+<<<<<<< HEAD
             print()
+=======
+                print()
+>>>>>>> 123848e4542a9b78bec2a280c5e5af492064d92f
 
     def _make_df(self, num):
         df = self.topic_sents_keywords.groupby('dominant_topic')
