@@ -15,19 +15,23 @@ def main():
 
 
 def prepare_text(books):
-<<<<<<< HEAD
-    pattern = ("(C H A P T E R [A-Z -]+)\n+" +         # Group 1 selects the chapter number
-               "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +  # Group 2 selects the chapter title but excludes edgs of all caps word beginning first sentence of the chapter
-               "(?![a-z']|[A-Z.])" +                      # chapter title ends before lowercase letters or a period
-               "(.*?)" +                                  # Group 3 selects the chapter contents
-               "(?=C H A P T E R|This book)")             # chapter contents ends with a new chapter or the end of book
-=======
-    pattern = ("(C H A P T E R [A-Z -]+)\n+" +           # Group 1 selects the chapter number
-            "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" + # Group 2 selects the chapter title but excludes edgs of all caps word beginning first sentence of the chapter
-            "(?![a-z']|[A-Z.])" +                     # chapter title ends before lowercase letters or a period
-            "(.*?)" +                                 # Group 3 selects the chapter contents
-            "(?=C H A P T E R|This book)")            # chapter contents ends with a new chapter or the end of book
->>>>>>> 123848e4542a9b78bec2a280c5e5af492064d92f
+    pattern = ("(C H A P T E R [A-Z -]+)\n+" +
+               # Group 1 selects the chapter number
+
+               "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +
+               # Group 2 selects the chapter title but excludes all
+               # caps word beginning first sentence of the chapter
+
+               "(?![a-z']|[A-Z.])" +
+               # chapter title ends before lowercase letters or a period
+
+               "(.*?)" +
+               # Group 3 selects the chapter contents
+
+               "(?=C H A P T E R|This book)"
+               # chapter contents ends with a new chapter or the end of book
+               )
+
     hp = defaultdict(dict)
     for book in books:
         title = book[28:-4]
