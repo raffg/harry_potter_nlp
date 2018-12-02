@@ -29,7 +29,7 @@ class BasicNLP(object):
         self.documents = texts
         self.doc_names = titles
         self.number_of_topics = None
-        self.model_list = None
+        self.model_list = []
         self.lda_model = None
         self.sentiments = [[] for doc in range(len(texts))]
         hf.print_time(start, time.time())
@@ -56,15 +56,13 @@ class BasicNLP(object):
     def compute_coherence(self, start=2, stop=30, step=3):
         stop += 1
         texts = self.texts
-        (model_list,
+        (self.model_list,
          coherence_values,
          self.id2word,
          self.corpus) = hf.compute_coherence_values(texts=texts,
                                                     start=start,
                                                     stop=stop,
                                                     step=step)
-
-        self.model_list = model_list
 
         # Show graph
         x = range(start, stop, step)
@@ -88,6 +86,7 @@ class BasicNLP(object):
                 for model in self.model_list:
                     if model[0] == self.number_of_topics:
                         self.lda_model = model[1]
+                        self.model.append((number, model[1]))
             else:
                 self._run_model(number)
         else:
@@ -110,6 +109,7 @@ class BasicNLP(object):
         self.lda_model = model[0][0][1]
         self.id2word = model[2]
         self.corpus = model[3]
+        self.model_list.append((number, model[0][0][1]))
 
     def view_clusters(self):
         if self.number_of_topics is None:
