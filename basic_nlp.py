@@ -22,7 +22,7 @@ class BasicNLP(object):
 
     def __init__(self, texts, titles=False):
         '''
-        Initializes documents and document names from zip
+        Initializes documents and document names. Titles is optional.
         '''
         start = time.time()
         print('Loading corpus...     ', end=' '), sys.stdout.flush()
@@ -39,6 +39,9 @@ class BasicNLP(object):
         self.prepare_texts(start)
 
     def prepare_texts(self, start):
+        '''
+
+        '''
         print('Splitting documents...', end=' ')
         texts = hf.text_to_words(self.documents)
         hf.print_time(start, time.time())
@@ -57,6 +60,9 @@ class BasicNLP(object):
         self.texts = texts
 
     def compute_coherence(self, start=2, stop=30, step=3):
+        '''
+
+        '''
         stop += 1
         texts = self.texts
         (self.model_list,
@@ -83,6 +89,9 @@ class BasicNLP(object):
                   round(cv, 6))
 
     def set_number_of_topics(self, number):
+        '''
+
+        '''
         self.number_of_topics = number
         if self.model_list is not None:
             if number in self.model_list:
@@ -105,6 +114,9 @@ class BasicNLP(object):
                                         'text'])
 
     def _run_model(self, number):
+        '''
+
+        '''
         model = hf.compute_coherence_values(texts=self.texts,
                                             start=number,
                                             stop=number + 1,
@@ -115,6 +127,9 @@ class BasicNLP(object):
         self.model_list.append((number, model[0][0][1]))
 
     def view_clusters(self):
+        '''
+        
+        '''
         if self.number_of_topics is None:
             print('Error: Number of topics not set.')
             print('Set number of topics with [object].set_number_of_topics(X)')
@@ -141,6 +156,9 @@ class BasicNLP(object):
         return vis
 
     def get_topic_vocabulary(self, topics='all', num_words=10):
+        '''
+
+        '''
         if topics == 'all':
             topics = list(range(self.number_of_topics))
         elif isinstance(topics, int):
@@ -154,6 +172,9 @@ class BasicNLP(object):
                                             [item[0] for item in topic[1]]))
 
     def get_representative_documents(self, topics='all', num_docs=1):
+        '''
+
+        '''
         if topics == 'all':
             topics = list(range(self.number_of_topics))
         elif isinstance(topics, int):
@@ -168,6 +189,9 @@ class BasicNLP(object):
                 print()
 
     def get_representative_sentences(self, topics='all', num_sentences=3):
+        '''
+
+        '''
         if topics == 'all':
             topics = list(range(self.number_of_topics))
         elif isinstance(topics, int):
@@ -192,6 +216,9 @@ class BasicNLP(object):
             print()
 
     def get_document_summaries(self, documents='all', num_sent=5):
+        '''
+
+        '''
         if documents == 'all':
             documents = list(range(len(self.documents)))
         elif isinstance(documents, int):
@@ -213,6 +240,9 @@ class BasicNLP(object):
             print()
 
     def _make_df(self, num):
+        '''
+
+        '''
         df = self.topic_sents_keywords.groupby('dominant_topic')
         df2 = pd.DataFrame()
 
@@ -232,9 +262,15 @@ class BasicNLP(object):
         return df2
 
     def name_topic(self, topic_number, topic_name):
+        '''
+
+        '''
         self.topic_names[topic_number] = topic_name
 
     def get_sentiment(self, documents='all'):
+        '''
+
+        '''
         if documents == 'all':
             documents = list(range(len(self.documents)))
         elif isinstance(documents, int):

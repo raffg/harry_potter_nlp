@@ -28,6 +28,9 @@ mallet_path = '~/mallet-2.0.8/bin/mallet'  # update this path
 
 
 def print_time(t1, t2):
+    '''
+
+    '''
     tm = t2 - t1
     if tm > 3600:
         print('Complete. Elapsed time: {}'.
@@ -44,17 +47,26 @@ def print_time(t1, t2):
 
 
 def sent_to_words(sentences):
+    '''
+
+    '''
     for sentence in sentences:
         # deacc=True removes punctuations
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
 
 
 def text_to_words(texts):
+    '''
+
+    '''
     return list(sent_to_words(texts))
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
 def remove_stopwords(texts):
+    '''
+
+    '''
     stop_words = stopwords.words('english')
     return ([[word for word
             in simple_preprocess(str(doc))
@@ -62,6 +74,9 @@ def remove_stopwords(texts):
 
 
 def make_bigrams(texts):
+    '''
+
+    '''
     data_words = text_to_words(texts)
     # higher threshold fewer phrases.
     bigram = gensim.models.Phrases(data_words, min_count=5, threshold=100)
@@ -70,7 +85,11 @@ def make_bigrams(texts):
 
 
 def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
-    """https://spacy.io/api/annotation"""
+    '''
+
+
+    https://spacy.io/api/annotation
+    '''
     texts_out = []
     nlp = spacy.load('en', disable=['parser', 'ner'])
     for sent in texts:
@@ -81,10 +100,16 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
 
 
 def create_id2word(data):
+    '''
+
+    '''
     return corpora.Dictionary(data)
 
 
 def create_corpus(id2word, data):
+    '''
+
+    '''
     return [id2word.doc2bow(text) for text in data]
 
 
@@ -128,6 +153,9 @@ def compute_coherence_values(texts, start=2, stop=30, step=3):
 
 
 def format_topics_sentences(ldamodel, corpus, texts):
+    '''
+
+    '''
     # Init output
     sent_topics_df = pd.DataFrame()
 
@@ -151,6 +179,9 @@ def format_topics_sentences(ldamodel, corpus, texts):
 
 
 def summarize(text, sentence_count, bonus_words, language='english'):
+    '''
+
+    '''
     summarizer = EdmundsonSummarizer(Stemmer(language))
     summarizer.stop_words = get_stop_words(language)
     summarizer.bonus_words = bonus_words
