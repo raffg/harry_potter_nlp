@@ -9,6 +9,10 @@ import pyLDAvis
 import pyLDAvis.gensim
 import matplotlib.pyplot as plt
 
+# nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk import tokenize
+
 # suppress deprecation warnings
 import warnings
 warnings.simplefilter("ignore", DeprecationWarning)
@@ -27,6 +31,7 @@ class BasicNLP(object):
         self.number_of_topics = None
         self.model_list = None
         self.lda_model = None
+        self.sentiments = [[] for doc in range(len(texts))]
         hf.print_time(start, time.time())
         self.prepare_texts(start)
 
@@ -232,3 +237,26 @@ class BasicNLP(object):
         elif isinstance(documents, int):
             documents = [documents]
 
+        analyzer = SentimentIntensityAnalyzer()
+
+        for doc in documents:
+            text = self.documents[doc]
+            sentence_list = tokenize.sent_tokenize(text)
+            sentiments = {'compound': 0.0, 'neg': 0.0, 'neu': 0.0, 'pos': 0.0}
+
+            for sentence in sentence_list:
+                vs = analyzer.polarity_scores(sentence)
+                sentiments['compound'] += vs['compound']
+                sentiments['neg'] += vs['neg']
+                sentiments['neu'] += vs['neu']
+                sentiments['pos'] += vs['pos']
+
+            cnt = len(sentence_list)
+            sentiments['compound'] = sentiments['compound'] / cnt
+            sentiments['neg'] = sentiments['neg'] / cnt
+            sentiments['neu'] = sentiments['neu'] / cnt
+            sentiments['pos'] = sentiments['pos'] / cnt
+
+            print(self.doc_names[doc])
+            print(sentiments)
+            self.sentiments[doc] = sentiments

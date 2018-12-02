@@ -43,10 +43,16 @@ def prepare_text(books):
             chap += 1
             chap_title = chapter[1].replace('\n', '')
             chap_text = (chapter[2][3:].replace('&ldquo;', '"')
-                                    .replace('&rdquo;', '"')
-                                    .replace('&mdash;', '—'))
-            chap_text = re.sub('\n*&bull; [0-9]+ &bull; \n*' + chap_title + ' \n*', '', chap_text, flags=re.IGNORECASE)
-            chap_text = re.sub('\n*&bull; [0-9]+ &bull; \s*CHAPTER [A-Z]+ \s*', '', chap_text)
+                                       .replace('&rdquo;', '"')
+                                       .replace('&mdash;', '—'))
+            chap_text = re.sub('\n*&bull; [0-9]+ &bull; \n*' +
+                               chap_title +
+                               ' \n*',
+                               '', chap_text,
+                               flags=re.IGNORECASE)
+            chap_text = re.sub('\n*&bull; [0-9]+ &bull; \s*CHAPTER [A-Z]+ \s*',
+                               '',
+                               chap_text)
             chap_text = re.sub(' \n&bull; [0-9]+ &bull; \n*', '', chap_text)
             chap_text = re.sub('\n+', '\n', chap_text)
             hp[title]['Chapter ' + str(chap)] = (chap_title, chap_text)
