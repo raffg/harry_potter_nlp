@@ -20,14 +20,17 @@ warnings.simplefilter("ignore", DeprecationWarning)
 
 class BasicNLP(object):
 
-    def __init__(self, titles, texts):
+    def __init__(self, texts, titles=False):
         '''
         Initializes documents and document names from zip
         '''
         start = time.time()
         print('Loading corpus...     ', end=' '), sys.stdout.flush()
         self.documents = texts
-        self.doc_names = titles
+        if not titles:
+            self.doc_names = ['document_' + doc for doc in range(len(texts))]
+        else:
+            self.doc_names = titles
         self.number_of_topics = None
         self.model_list = []
         self.lda_model = None
