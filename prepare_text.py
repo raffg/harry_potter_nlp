@@ -31,7 +31,6 @@ def prepare_text(books):
                "(?=C H A P T E R|This book)"
                # chapter contents ends with a new chapter or the end of book
                )
-
     hp = defaultdict(dict)
     for book in books:
         title = book[28:-4]
@@ -55,6 +54,10 @@ def prepare_text(books):
                                chap_text)
             chap_text = re.sub(' \n&bull; [0-9]+ &bull; \n*', '', chap_text)
             chap_text = re.sub('\n+', '\n', chap_text)
+            chap_text = re.sub('\s*'.join([word for word in
+                                           chap_title.split()]),
+                               '',
+                               chap_text)
             hp[title]['Chapter ' + str(chap)] = (chap_title, chap_text)
     hp = dict(hp)
     return hp
