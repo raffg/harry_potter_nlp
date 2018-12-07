@@ -1,13 +1,13 @@
 Dominant_Topic,Topic_Keywords,Num_Documents,Percent_Documents
-0.0,"harry, ron, malfoy, gryffindor, slytherin, wood, hermione, back, team, broom",13,0.0677
-1.0,"harry, snape, hermione, black, lupin, ron, back, sirius, door, eye",17,0.0885
-2.0,"harry, wand, light, back, hand, foot, face, feel, head, move",24,0.125
-3.0,"dumbledore, harry, sirius, fudge, ministry, wizard, kreacher, sit, order, office",15,0.0781
-4.0,"ron, harry, hermione, mrs_weasley, ginny, bill, back, yeah, -PRON-, room",15,0.0781
-5.0,"harry, malfoy, ron, slughorn, ginny, riddle, potion, sir, lockhart, good",12,0.0625
-6.0,"harry, uncle_vernon, dudley, back, dursley, aunt_petunia, owl, letter, room, house",15,0.0781
-7.0,"hagrid, harry, hermione, moody, yeh, back, ron, ter, -PRON-, cedric",16,0.0833
-8.0,"ron, harry, hermione, professor, umbridge, neville, table, back, class, year",28,0.1458
-9.0,"harry, time, make, good, feel, day, find, hand, night, work",7,0.0365
-10.0,"voldemort, harry, death_eater, wand, kill, man, die, find, horcrux, dead",12,0.0625
-11.0,"harry, mr_weasley, fr, door, wizard, percy, george, hogwart, large, muggle",18,0.0938
+0.0,"mrs_weasley, mr_weasley, fr, ron, harry, george, door, ministry, wizard, fudge",22,0.1146
+1.0,"hermione, ron, harry, wand, make, goblin, -PRON-, luna, sword, place",14,0.0729
+2.0,"hermione, harry, ron, umbridge, give, yeah, back, hand, time, voice",19,0.099
+3.0,"harry, make, slughorn, ginny, time, good, kreacher, find, room, riddle",12,0.0625
+4.0,"harry, ron, hermione, gryffindor, wood, broom, team, good, malfoy, play",11,0.0573
+5.0,"ron, harry, malfoy, hermione, professor_mcgonagall, neville, professor, student, table, snape",23,0.1198
+6.0,"harry, moody, dobby, cedric, eye, krum, potter, make, back, sir",10,0.0521
+7.0,"harry, wand, back, hand, face, move, foot, light, head, feel",30,0.1562
+8.0,"harry, uncle_vernon, dudley, dursley, letter, back, boy, owl, house, aunt_petunia",18,0.0938
+9.0,"hagrid, harry, hermione, yeh, ron, back, ter, -PRON-, tree, forest",9,0.0469
+10.0,"dumbledore, voldemort, man, face, eye, speak, voice, stand, hand, die",14,0.0729
+11.0,"harry, snape, sirius, lupin, black, dementor, back, hear, hermione, turn",10,0.0521

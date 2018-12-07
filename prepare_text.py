@@ -35,14 +35,16 @@ def prepare_text(books):
     for book in books:
         title = book[28:-4]
         with open(book, 'r') as f:
-            text = f.read().replace('&rsquo;', "'").replace('&lsquo;', "'")
+            text = f.read()
         chapters = re.findall(pattern, text, re.DOTALL)
         chap = 0
         for chapter in chapters:
             chap += 1
             chap_title = chapter[1].replace('\n', '')
-            chap_text = (chapter[2][3:].replace('&ldquo;', '"')
+            chap_text = (chapter[2][3:].replace('&rsquo;', "'")
+                                       .replace('&lsquo;', "'")
                                        .replace('&rdquo;', '"')
+                                       .replace('&ldquo;', '"')
                                        .replace('&mdash;', '—'))
             chap_text = re.sub('\n*&bull; [0-9]+ &bull; \n*' +
                                chap_title +
