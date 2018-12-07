@@ -15,7 +15,7 @@ def main():
 
 
 def prepare_text(books):
-    pattern = ("(C H A P T E R [A-Z -]+)\n+" +
+    pattern = ("((?:[A-Z-][ ]){9,}[A-Z])\s+" +
                # Group 1 selects the chapter number
 
                "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +
@@ -28,7 +28,7 @@ def prepare_text(books):
                "(.*?)" +
                # Group 3 selects the chapter contents
 
-               "(?=C H A P T E R|This book)"
+               "(?=(?:[A-Z][ ]){9,}|This book \n)"
                # chapter contents ends with a new chapter or the end of book
                )
     hp = defaultdict(dict)
@@ -55,7 +55,7 @@ def prepare_text(books):
                                '',
                                chap_text)
             chap_text = re.sub(' \n&bull; [0-9]+ &bull; \n*', '', chap_text)
-            chap_text = re.sub('\n+', '\n', chap_text)
+            # chap_text = re.sub('\n+', '\n', chap_text)
             chap_text = re.sub('\s*'.join([word for word in
                                            chap_title.split()]),
                                '',

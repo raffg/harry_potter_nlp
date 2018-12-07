@@ -1,13 +1,13 @@
 Dominant_Topic,Topic_Keywords,Num_Documents,Percent_Documents
-0.0,"mrs_weasley, mr_weasley, fr, ron, harry, george, door, ministry, wizard, fudge",22,0.1146
-1.0,"hermione, ron, harry, wand, make, goblin, -PRON-, luna, sword, place",14,0.0729
-2.0,"hermione, harry, ron, umbridge, give, yeah, back, hand, time, voice",19,0.099
-3.0,"harry, make, slughorn, ginny, time, good, kreacher, find, room, riddle",12,0.0625
-4.0,"harry, ron, hermione, gryffindor, wood, broom, team, good, malfoy, play",11,0.0573
-5.0,"ron, harry, malfoy, hermione, professor_mcgonagall, neville, professor, student, table, snape",23,0.1198
-6.0,"harry, moody, dobby, cedric, eye, krum, potter, make, back, sir",10,0.0521
-7.0,"harry, wand, back, hand, face, move, foot, light, head, feel",30,0.1562
-8.0,"harry, uncle_vernon, dudley, dursley, letter, back, boy, owl, house, aunt_petunia",18,0.0938
-9.0,"hagrid, harry, hermione, yeh, ron, back, ter, -PRON-, tree, forest",9,0.0469
-10.0,"dumbledore, voldemort, man, face, eye, speak, voice, stand, hand, die",14,0.0729
-11.0,"harry, snape, sirius, lupin, black, dementor, back, hear, hermione, turn",10,0.0521
+0.0,"harry, lupin, professor, make, face, feel, time, black, hear, turn",7,0.0366
+1.0,"ron, harry, mrs_weasley, mr_weasley, fr, george, fudge, bill, ministry, wizard",19,0.0995
+2.0,"ron, harry, malfoy, snape, gryffindor, professor_mcgonagall, hermione, slytherin, fr, weasley",26,0.1361
+3.0,"hermione, ron, harry, umbridge, slughorn, yeah, good, people, back, make",24,0.1257
+4.0,"sirius, harry, door, voice, kreacher, ministry, room, stand, open, chair",9,0.0471
+5.0,"harry, hear, door, open, back, eye, potter, black, move, head",19,0.0995
+6.0,"harry, moody, dobby, cedric, eye, krum, potter, sir, dumbledore, bagman",13,0.0681
+7.0,"harry, dumbledore, riddle, wizard, horcrux, leave, make, -PRON-, albus, good",15,0.0785
+8.0,"hagrid, hermione, harry, yeh, ron, ter, -PRON-, back, forest, tree",7,0.0366
+9.0,"dumbledore, snape, voldemort, eye, hand, back, face, kill, man, father",14,0.0733
+10.0,"harry, hermione, wand, ron, back, feel, hand, light, foot, death_eater",21,0.1099
+11.0,"harry, uncle_vernon, dudley, dursley, boy, letter, owl, house, aunt_petunia, back",17,0.089
