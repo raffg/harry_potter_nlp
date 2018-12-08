@@ -1,13 +1,13 @@
 Dominant_Topic,Topic_Keywords,Num_Documents,Percent_Documents
-0.0,"harry, lupin, professor, make, face, feel, time, black, hear, turn",7,0.0366
-1.0,"ron, harry, mrs_weasley, mr_weasley, fr, george, fudge, bill, ministry, wizard",19,0.0995
-2.0,"ron, harry, malfoy, snape, gryffindor, professor_mcgonagall, hermione, slytherin, fr, weasley",26,0.1361
-3.0,"hermione, ron, harry, umbridge, slughorn, yeah, good, people, back, make",24,0.1257
-4.0,"sirius, harry, door, voice, kreacher, ministry, room, stand, open, chair",9,0.0471
-5.0,"harry, hear, door, open, back, eye, potter, black, move, head",19,0.0995
-6.0,"harry, moody, dobby, cedric, eye, krum, potter, sir, dumbledore, bagman",13,0.0681
-7.0,"harry, dumbledore, riddle, wizard, horcrux, leave, make, -PRON-, albus, good",15,0.0785
-8.0,"hagrid, hermione, harry, yeh, ron, ter, -PRON-, back, forest, tree",7,0.0366
-9.0,"dumbledore, snape, voldemort, eye, hand, back, face, kill, man, father",14,0.0733
-10.0,"harry, hermione, wand, ron, back, feel, hand, light, foot, death_eater",21,0.1099
-11.0,"harry, uncle_vernon, dudley, dursley, boy, letter, owl, house, aunt_petunia, back",17,0.089
+0.0,"voldemort, death_eater, wand, eye, -PRON-, luna, goblin, death, sword, long",14,0.0733
+1.0,"snape, harry, lupin, black, sirius, professor, potter, face, dementor, professor_mcgonagall",13,0.0681
+2.0,"harry, moody, dobby, cedric, eye, krum, potter, back, bagman, mr_crouch",11,0.0576
+3.0,"harry, room, door, sirius, voice, ginny, feel, head, open, inside",6,0.0314
+4.0,"ron, hermione, harry, make, back, time, find, give, yeah, thing",10,0.0524
+5.0,"hagrid, harry, yeh, ter, -PRON-, back, forest, fang, giant, castle",10,0.0524
+6.0,"harry, wand, back, head, foot, hand, feel, light, hear, move",35,0.1832
+7.0,"harry, malfoy, ron, gryffindor, slytherin, professor_mcgonagall, filch, weasley, team, wood",21,0.1099
+8.0,"dumbledore, harry, fudge, slughorn, voldemort, time, make, riddle, leave, wizard",15,0.0785
+9.0,"table, good, umbridge, hand, talk, neville, year, turn, sit, day",22,0.1152
+10.0,"harry, mrs_weasley, mr_weasley, fr, george, wizard, ministry, tonk, ginny, percy",19,0.0995
+11.0,"harry, uncle_vernon, dudley, dursley, back, letter, house, aunt_petunia, boy, make",15,0.0785
