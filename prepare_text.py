@@ -15,10 +15,10 @@ def main():
 
 
 def prepare_text(books):
-    pattern = ("((?:[A-Z-][ ]){9,}[A-Z])\s+" +
+    pattern = ("(C H A P T E R (?:[A-Z-][ ]){2,}[A-Z])\s+" +
                # Group 1 selects the chapter number
 
-               "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +
+               "([A-Z \n',.-]+)\s(?![A-Z]+(?=\.)\s)" +
                # Group 2 selects the chapter title but excludes all
                # caps word beginning first sentence of the chapter
 
@@ -28,24 +28,29 @@ def prepare_text(books):
                "(.*?)" +
                # Group 3 selects the chapter contents
 
-               "(?=(?:[A-Z][ ]){9,}|This book \n)"
+               "(?=C H A P T E R (?:[A-Z][ ]){2,}|" +
+               "This\s+book\s+was\s+art\s+directed\s+)"
                # chapter contents ends with a new chapter or the end of book
                )
     hp = defaultdict(dict)
     for book in books:
         title = book[28:-4]
         with open(book, 'r') as f:
-            text = f.read()
+            text = (f.read().replace('&rsquo;', "'")
+                            .replace('&lsquo;', "'")
+                            .replace('&rdquo;', '"')
+                            .replace('&ldquo;', '"')
+                            .replace('&mdash;', '—'))
         chapters = re.findall(pattern, text, re.DOTALL)
         chap = 0
         for chapter in chapters:
             chap += 1
             chap_title = chapter[1].replace('\n', '')
-            chap_text = (chapter[2][3:].replace('&rsquo;', "'")
-                                       .replace('&lsquo;', "'")
-                                       .replace('&rdquo;', '"')
-                                       .replace('&ldquo;', '"')
-                                       .replace('&mdash;', '—'))
+            chap_text = chapter[2][3:]
+        phrase = ' HE-WHO-MUST-NOT-BE-NAMED RETURNS'
+        if phrase in chap_title:
+            chap_title = chap_title.replace(phrase, '')
+            chap_text = phrase[1:] + ' I' + chap_text
             chap_text = re.sub('\n*&bull; [0-9]+ &bull; \n*' +
                                chap_title +
                                ' \n*',
