@@ -18,7 +18,7 @@ def prepare_text(books):
     pattern = ("(C H A P T E R (?:[A-Z-][ ]){2,}[A-Z])\s+" +
                # Group 1 selects the chapter number
 
-               "([A-Z \n',.-]+)\s(?![A-Z]+(?=\.)\s)" +
+               "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +
                # Group 2 selects the chapter title but excludes all
                # caps word beginning first sentence of the chapter
 
