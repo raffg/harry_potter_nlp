@@ -4,7 +4,7 @@ This repo demonstrates a collection of NLP tasks all using the books of Harry Po
 
 1. [Topic modeling with Latent Dirichlet Allocation](https://towardsdatascience.com/basic-nlp-on-the-texts-of-harry-potter-topic-modeling-with-latent-dirichlet-allocation-f3c00f77b0f5)
 2. [Regular Expression case study](https://towardsdatascience.com/regex-on-the-texts-of-harry-potter-96b8a3878303)
-3. Extractive text summarization (coming soon!)
+3. [Extractive text summarization](https://towardsdatascience.com/text-summarization-on-the-books-of-harry-potter-5e9f5bf8ca6c)
 4. Sentiment analysis (coming soon!)
 5. Word2vec (coming soon!)
 6. Doc2vec (coming soon!)
