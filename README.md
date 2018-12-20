@@ -8,7 +8,8 @@ This repo demonstrates a collection of NLP tasks all using the books of Harry Po
 4. Sentiment analysis (coming soon!)
 5. Word2vec (coming soon!)
 6. Doc2vec (coming soon!)
-7. Abstractive text summarization with deep learning (coming soon!)
+7. Simulated text with Markov Chains (coming soon!)
+8. Abstractive text summarization with deep learning (coming soon!)
 
 ## Instructions for BasicNLP class (basic_nlp.py)
 Functions of the class are topic modeling with LDA, document summarization, and sentiment analysis.
