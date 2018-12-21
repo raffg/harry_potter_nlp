@@ -5,11 +5,7 @@ This repo demonstrates a collection of NLP tasks all using the books of Harry Po
 1. [Topic modeling with Latent Dirichlet Allocation](https://towardsdatascience.com/basic-nlp-on-the-texts-of-harry-potter-topic-modeling-with-latent-dirichlet-allocation-f3c00f77b0f5)
 2. [Regular Expression case study](https://towardsdatascience.com/regex-on-the-texts-of-harry-potter-96b8a3878303)
 3. [Extractive text summarization](https://towardsdatascience.com/text-summarization-on-the-books-of-harry-potter-5e9f5bf8ca6c)
-4. Sentiment analysis (coming soon!)
-5. Word2vec (coming soon!)
-6. Doc2vec (coming soon!)
-7. Simulated text with Markov Chains (coming soon!)
-8. Abstractive text summarization with deep learning (coming soon!)
+4. [Sentiment analysis](https://towardsdatascience.com/basic-nlp-on-the-texts-of-harry-potter-sentiment-analysis-1b474b13651d)
 
 ## Instructions for BasicNLP class (basic_nlp.py)
 Functions of the class are topic modeling with LDA, document summarization, and sentiment analysis.
