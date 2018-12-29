@@ -15,7 +15,8 @@ def main():
 
 
 def prepare_text(books):
-    pattern = ("(C H A P T E R (?:[A-Z-][ ]){2,}[A-Z])\s+" +
+    pattern = ("(C H A P T E R (?:[A-Z-][ ]){2,}[A-Z]|"
+               "E P I L O G U E)\s+" +
                # Group 1 selects the chapter number
 
                "([A-Z \n',.-]+)\\b(?![A-Z]+(?=\.)\\b)" +
@@ -28,9 +29,10 @@ def prepare_text(books):
                "(.*?)" +
                # Group 3 selects the chapter contents
 
-               "(?=C H A P T E R (?:[A-Z][ ]){2,}|" +
-               "This\s+book\s+was\s+art\s+directed\s+)"
-               # chapter contents ends with a new chapter or the end of book
+               "(?=C H A P T E R (?:[A-Z][ ]){2,}|"
+               "This\s+book\s+was\s+art\s+directed\s+|"
+               "E P I L O G U E)"
+               # chapter content ends with a new chapter or the end of book
                )
     hp = defaultdict(dict)
     for book in books:
@@ -47,6 +49,7 @@ def prepare_text(books):
             chap += 1
             chap_title = chapter[1].replace('\n', '')
             chap_text = chapter[2][3:]
+        # Catch single chapter which begins with the following:
         phrase = ' HE-WHO-MUST-NOT-BE-NAMED RETURNS'
         if phrase in chap_title:
             chap_title = chap_title.replace(phrase, '')
@@ -56,7 +59,8 @@ def prepare_text(books):
                                ' \n*',
                                '', chap_text,
                                flags=re.IGNORECASE)
-            chap_text = re.sub('\n*&bull; [0-9]+ &bull; \s*CHAPTER [A-Z]+ \s*',
+            chap_text = re.sub('\n*&bull; [0-9]+ &bull;\s*(CHAPTER [A-Z-]+\s*)'
+                               '|(EPILOGUE)+\s*',
                                '',
                                chap_text)
             chap_text = re.sub(' \n&bull; [0-9]+ &bull; \n*', '', chap_text)
@@ -67,6 +71,9 @@ def prepare_text(books):
                                chap_text)
             hp[title]['Chapter ' + str(chap)] = (chap_title, chap_text)
     hp = dict(hp)
+    # Correct the title of the epilogue
+    hp["Harry Potter and the Deathly Hallows"]['Epilogue'] = (
+        hp["Harry Potter and the Deathly Hallows"].pop('Chapter 37'))
     return hp
 
 

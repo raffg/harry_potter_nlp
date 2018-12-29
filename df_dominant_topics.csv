@@ -1,13 +1,13 @@
 Dominant_Topic,Topic_Keywords,Num_Documents,Percent_Documents
-0.0,"harry, wand, back, foot, door, voice, light, floor, head, dark",22,0.1111
-1.0,"harry, umbridge, professor, back, class, book, hermione, lesson, feel, hand",17,0.0859
-2.0,"harry, ron, hermione, gryffindor, fly, wood, time, back, malfoy, broom",10,0.0505
-3.0,"harry, snape, sirius, lupin, black, back, dementor, hear, turn, eye",16,0.0808
-4.0,"harry, uncle_vernon, dudley, dursley, letter, owl, aunt_petunia, house, magic, boy",18,0.0909
-5.0,"voldemort, wand, death_eater, harry, eye, face, potter, back, kill, hand",13,0.0657
-6.0,"ron, harry, malfoy, neville, professor_mcgonagall, snape, student, back, professor, year",22,0.1111
-7.0,"harry, mrs_weasley, mr_weasley, fr, ron, george, wizard, kreacher, bill, back",22,0.1111
-8.0,"harry, moody, dobby, cedric, eye, krum, back, potter, bagman, mr_crouch",14,0.0707
-9.0,"hagrid, harry, hermione, yeh, ron, -PRON-, ter, back, tree, forest",11,0.0556
-10.0,"hermione, harry, ron, find, make, yeah, slughorn, ginny, time, turn",19,0.096
-11.0,"dumbledore, harry, voldemort, time, make, wizard, year, riddle, hogwart, man",14,0.0707
+0.0,"harry, wand, hand, face, back, death_eater, potter, light, door, floor",19,0.0955
+1.0,"harry, back, voice, feel, head, eye, dark, sound, walk, reach",13,0.0653
+2.0,"harry, mr_weasley, door, wizard, hogwart, percy, fr, muggle, large, witch",22,0.1106
+3.0,"ron, hermione, harry, back, yeah, find, make, time, malfoy, -PRON-",14,0.0704
+4.0,"umbridge, professor, class, harry, year, lesson, voice, turn, hand, neville",22,0.1106
+5.0,"hagrid, harry, uncle_vernon, yeh, dudley, ter, back, dursley, -PRON-, aunt_petunia",15,0.0754
+6.0,"harry, malfoy, ron, gryffindor, slytherin, professor_mcgonagall, filch, weasley, face, team",24,0.1206
+7.0,"snape, harry, lupin, black, fudge, sirius, dementor, eye, potter, door",12,0.0603
+8.0,"wand, make, wizard, goblin, sword, hand, albus, griphook, horcrux, scrimgeour",14,0.0704
+9.0,"dumbledore, harry, voldemort, boy, make, time, die, lord, riddle, return",17,0.0854
+10.0,"harry, sirius, mrs_weasley, ginny, room, george, back, ministry, kreacher, feel",14,0.0704
+11.0,"harry, dobby, moody, cedric, krum, face, eye, sir, potter, bagman",13,0.0653
