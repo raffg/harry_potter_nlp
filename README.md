@@ -7,6 +7,8 @@ This repo demonstrates a collection of NLP tasks all using the books of Harry Po
 3. [Extractive text summarization](https://towardsdatascience.com/text-summarization-on-the-books-of-harry-potter-5e9f5bf8ca6c)
 4. [Sentiment analysis](https://towardsdatascience.com/basic-nlp-on-the-texts-of-harry-potter-sentiment-analysis-1b474b13651d)
 
+![Emotional Sentiment of the Harry Potter series](images/sentiment.png)
+
 ## Instructions for BasicNLP class (basic_nlp.py)
 Functions of the class are topic modeling with LDA, document summarization, and sentiment analysis.
 
